@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   render() {
-    return <h1>Hello</h1>;
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-6">column number one</div>
+          <div className="col-6">column number one</div>
+          <div className="col-6">column number one</div>
+        </div>
+      </div>
+    );
   }
 }
 
