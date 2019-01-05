@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../logo.svg";
+// Styled components
+import styled from "styled-components";
+import { ButtonContainer } from "./styles/button";
 
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark px-sm-5">
+      <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
         <Link to="/">
           <img src={logo} alt="" className="navbar-brand" />
         </Link>
@@ -25,24 +28,36 @@ class Navbar extends Component {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
-                Home <span className="sr-only">(current)</span>
+                home
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Link
+                link
               </Link>
             </li>
           </ul>
         </div>
-        <Link to="/cart">
-          <button>
-            <i className="fas fa-cart-plus">Cart</i>
-          </button>
+        <Link to="/cart" className="ml-auto">
+          <ButtonContainer>
+            <span className="mr-2">
+              <i className="fas fa-cart-plus" />
+              {"  "}my cart
+            </span>
+          </ButtonContainer>
         </Link>
-      </nav>
+      </NavWrapper>
     );
   }
 }
+
+const NavWrapper = styled.nav`
+  background: var(--mainBlue);
+  .nav-link {
+    color: var(--mainWhite) !important;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+`;
 
 export default Navbar;
