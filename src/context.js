@@ -54,7 +54,7 @@ class ProductProvider extends Component {
         return { products: tempProducts, cart: [...this.state.cart, product] };
       },
       () => {
-       this.addTotals();
+        this.addTotals();
       }
     );
   };
@@ -83,7 +83,17 @@ class ProductProvider extends Component {
   };
 
   clearCart = () => {
-    console.log("cleared");
+    this.setState(
+      () => {
+        return {
+          cart: []
+        };
+      },
+      () => {
+        this.setProducts();
+        this.addTotals();
+      }
+    );
   };
 
   addTotals = () => {
