@@ -7,12 +7,12 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart: [],
+    cart: storeProducts,
     modalOpen: false,
     modalProduct: detailProduct,
-    cartSubTotal: 0,
-    cartTaz: 0,
-    cartTotal: 0
+    cartSubTotal: 10,
+    cartTax: 20,
+    cartTotal: 30
   };
   componentDidMount() {
     this.setProducts();
