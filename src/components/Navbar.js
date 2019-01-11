@@ -31,11 +31,6 @@ class Navbar extends Component {
                 home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                link
-              </Link>
-            </li>
           </ul>
         </div>
         <Link to="/cart" className="ml-auto">
